@@ -1,6 +1,7 @@
 import React from "react";
-import { FlatList, StyleSheet, View } from "react-native";
+import { FlatList, View } from "react-native";
 import AccountsGroup from "../components/AccountsGroup";
+import Footer from "../components/Footer";
 
 const AccountGroupList = () => {
     const list = [
@@ -30,22 +31,17 @@ const AccountGroupList = () => {
 
 
     return (
-        <View style={styles.container}>
+        <View style={{flex: 1}}>
             <FlatList
+                style={{margin: 20, marginTop: 80}}
                 data={list}
                 renderItem={(({item}) => <AccountsGroup group={item} />)}
                 ItemSeparatorComponent={() => <View style={{height: 30}} />}
                 showsVerticalScrollIndicator={false}
             />
+            <Footer />
         </View>
     );
 };
-
-const styles = StyleSheet.create({
-    container: {
-        width: '90%',
-        height: '80%',
-    }
-});
 
 export default AccountGroupList;

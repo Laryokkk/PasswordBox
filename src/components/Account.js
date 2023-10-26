@@ -11,7 +11,7 @@ const Account = ({account}) => {
 
     return (
         <View onTouchEnd={handleChangeVisibility} style={styles.container}>
-            <View>
+            <View style={styles.credentials}>
                 <Text style={styles.textEmail}>
                     {account.email}
                 </Text>
@@ -21,9 +21,7 @@ const Account = ({account}) => {
                     </Text>
                 )}
             </View>
-            <View>
-                <Ionicons name="md-checkmark-circle" size={24} color="green" />
-            </View>
+            <Ionicons style={styles.icon} size={16} name="md-checkmark-circle" />
         </View>
     );
 };
@@ -40,13 +38,21 @@ const styles = StyleSheet.create({
 
         backgroundColor: '#323232',
     },
+    credentials: {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '8'
+    },
     textEmail: {
         fontSize: 14,
         color: '#FFFFFF',
     },
     textPassword: {
-        fontSize: 14,
+        fontSize: 18,
         color: '#25D8D8',
+    },
+    icon: {
+        color: '#000000'
     }
 });
 
