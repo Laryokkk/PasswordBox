@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View, TextInput, Pressable, StyleSheet, Text } from "react-native";
 
-const Footer = () => {
+const Footer = ({onClick}) => {
     const [text, setText] = useState('');
 
     return (
@@ -12,7 +12,7 @@ const Footer = () => {
                 onChangeText={newText => setText(newText)}
                 defaultValue={text}
             />
-            <Pressable style={styles.button} >
+            <Pressable style={styles.button} onPress={onClick}>
                 <Text style={styles.buttonText}>
                     Add
                 </Text>

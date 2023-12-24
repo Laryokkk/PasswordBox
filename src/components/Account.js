@@ -10,7 +10,7 @@ const Account = ({account}) => {
     };
 
     return (
-        <View onTouchEnd={handleChangeVisibility} style={styles.container}>
+        <View onPress={handleChangeVisibility} style={styles.container}>
             <View style={styles.credentials}>
                 <Text style={styles.textEmail}>
                     {account.email}
